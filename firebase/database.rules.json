@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "users": {
+      ".read": "(root.child('users/' + auth.uid + '/role').val() === 'admin')",
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        ".write": "(root.child('users/' + auth.uid + '/role').val() === 'admin') && (root.child('users/' + auth.uid + '/isActive').val() === true)",
+        "reservations": {
+          ".write": "($user_id === auth.uid) && (root.child('users/' + auth.uid + '/isActive').val() === true)"
+        }
+      }
+    },
+    "bikes": {
+      ".read": "(auth != null) && (root.child('users/' + auth.uid + '/isActive').val() === true)",
+      ".write": "(root.child('users/' + auth.uid + '/role').val() === 'admin') && (root.child('users/' + auth.uid + '/isActive').val() === true)",
+      "$bike_id": {
+        "reservations": {
+          ".write": "(auth != null) && (root.child('users/' + auth.uid + '/isActive').val() === true)",
+          ".validate": "(root.child('bikes/' + $bike_id + '/isDeleted').val() !== true)"
+        },
+        "rate": {
+          ".write": "(auth.uid != null) && (root.child('users/' + auth.uid + '/isActive').val() === true)"
+        }
+      }
+    },
+    "colors": {
+      ".read": "(auth != null) && (root.child('users/' + auth.uid + '/isActive').val() === true)",
+      ".write": "(root.child('users/' + auth.uid + '/role').val() === 'admin') && (root.child('users/' + auth.uid + '/isActive').val() === true)"
+    }
+  }
+}

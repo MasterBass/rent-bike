@@ -1,0 +1,92 @@
+.App {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
+    min-width: 550px;
+    max-width: 850px;
+    margin: 0 auto 30px;
+    padding: 0 35px;
+}
+
+a.selected {
+    color: orange !important;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none !important;
+}
+
+.hide {
+    display: none;
+}
+
+nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 60%;
+    float: left;
+}
+
+div.log-in-out {
+    padding-top: 20px;
+    width: 30%;
+    float: right;
+    text-align: right;
+}
+
+div.clear {
+    clear: both;
+}
+
+.form-check {
+    margin-bottom: 15px;
+}
+
+.checkbox {
+    box-shadow: none !important;
+    float: left;
+    cursor: pointer;
+    width: 120px !important;
+}
+
+.checkbox-label {
+    margin-top: 12px;
+    margin-left: -90px;
+}
+
+progress {
+    width: 100%;
+    height: 40px;
+}
+
+img.bike-img {
+    width: 250px;
+    margin: 0 auto 25px;
+}
+
+html {
+    font-size: 14px !important;
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker-wrapper div{
+    width: 100%;
+}
+
+.rate {
+    cursor: pointer;
+}
+.red {
+    color: red;
+}
+
+.rate-header {
+    min-width: 95px;
+}
+
+.selected-row {
+    background-color: rgba(204, 204, 204, 0.44);
+}
